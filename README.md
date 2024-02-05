@@ -4,7 +4,7 @@
 
 Node.js 18.18.0
 
-Comando para start o projeto: npm run start
+Comando para start o projeto: "npm install", em seguida "npm run start"
 
 ### Gerenciamento de tokens
 
