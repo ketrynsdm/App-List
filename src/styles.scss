@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming';
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-blue);
+$custom-app-secondary: mat-palette($mat-indigo, A200, A400, 700);
+$custom-app-warn: mat-palette($mat-red);
+
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-warn);
+
+@include angular-material-theme($custom-theme);
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: black;
+}
+
+/* width */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #2196f3;
+}

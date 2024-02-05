@@ -1,0 +1,33 @@
+<form class="container-imagem" [formGroup]="formContactById">
+  <div class="text titulo">
+    <h1>Editar </h1>
+    <h1>Contato</h1>
+  </div>
+  <div class="example-container">
+    <mat-form-field >
+      <Label>Nome</Label>
+      <mat-label>nome</mat-label>
+      <input matInput placeholder="nome" formControlName="nome"  required />
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <Label>Email</Label>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="email" formControlName="email" required />
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <Label>Telefone</Label>
+      <mat-label>Telefone</mat-label>
+      <input matInput placeholder="telefone" formControlName="telefone" required />
+    </mat-form-field>
+  </div>
+  <div class="row example-container button">
+    <button class="salvar" (click)="onSubmit()" [disabled]="!formContactById.valid" type="submit">ADICIONAR</button>
+    <button mat-raised-button color="warn" routerLink="/lista" type="submit">CANCELAR</button>
+  </div>
+</form>
+
+

@@ -1,0 +1,103 @@
+.container {
+  background-image: url("../../../../assets/imagem/Ellipse\ 1.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 250px, auto;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowraps;
+  color: white;
+  background-color: black;
+  height: 100%;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: baseline;
+  grid-gap: 50px;
+  position: absolute;
+  gap: 50px;
+  left: 40px;
+}
+
+h1 {
+  font-size: 100px;
+  font-family: fantasy;
+}
+
+label {
+  display: block;
+  margin-bottom: -12px;
+  margin-left: 8px;
+  background-color: black;
+  padding: 2px 10px;
+  position: inherit;
+  z-index: 10;
+  max-width: fit-content;
+}
+
+input {
+  border: 1px solid aqua;
+  border-radius: 8px;
+  padding: 12px 20px 5px 20px ;
+}
+
+.button {
+  display: flex;
+  gap: 7px;
+  margin-left: 36px;
+}
+
+
+
+.salvar {
+  color: #ffffff;
+  width: 120px;
+  height: 42px;
+  left: 825px;
+  background: #2196f3;
+  border-radius: 6px;
+}
+
+.salvar[disabled] {
+  color: #ffffff;
+  width: 120px;
+  height: 42px;
+  left: 825px;
+  background: #1e0dff;
+  opacity: 0.2;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    background-image: none;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e0dff;
+    width: 100%;
+    height: 20vh;
+    left: 0px;
+    top: 0px;
+  }
+
+  h1 {
+    font-size: 60px;
+    font-family: fantasy;
+    margin-top: 15px;
+  }
+
+}

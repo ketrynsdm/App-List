@@ -1,0 +1,56 @@
+<div class=" row example-container">
+  <button mat-raised-button color="primary" routerLink="/adicionar" type="submit"
+    [disabled]="!formTable.valid">ADICIONAR</button>
+</div>
+
+<div class="container">
+  <table mat-table [dataSource]="listaAtualizada">
+    <div class="col-sm-12">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+      <ng-container class="container-name" matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+      <ng-container matColumnDef="telefone">
+        <th mat-header-cell *matHeaderCellDef> Telefone </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="foto">
+        <th mat-header-cell *matHeaderCellDef> foto </th>
+        <td mat-cell *matCellDef="let element"> {{element.foto}} </td>
+      </ng-container>
+      <ng-container matColumnDef="data">
+        <th mat-header-cell *matHeaderCellDef> Data </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataCadastro | date: "dd/MM/yyyy"}} </td>
+      </ng-container>
+      <div class="container-button">
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" (click)="onButtonClick(element.id)" type="submit"
+              [disabled]="!formTable.valid">Editar</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="actionDelete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)="onDelete(element.id)" type="submit"
+              [disabled]="!formTable.valid">Detetar</button>
+          </td>
+        </ng-container>
+      </div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </div>
+
+  </table>
+</div>
+
+

@@ -1,0 +1,30 @@
+<form class="imagem-container" [formGroup]="formLogin">
+  <div>
+    <div class="example-container">
+      <h2>Login</h2>
+      <mat-form-field>
+        <label for="">E-mail</label>
+        <input  matInput formControlName="email" required />
+      </mat-form-field>
+      <div class="error" *ngIf="formLogin.controls.email?.errors?.required">Email e obrigatório</div>
+      <div class="error" *ngIf="formLogin.controls.email?.errors?.email">Formato de email inválido</div>
+    </div>
+    <div class="example-container">
+      <mat-form-field>
+        <label for="">Senha</label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="error" *ngIf="msgError">Email ou senha inválido</div>
+    </div>
+    <div class="example-container button">
+      <button mat-raised-button color="primary" (click)="enviar()" type="submit"
+        >Entrar</button>
+      <button mat-raised-button color="basic" (click)="OnClear()" type="submit">Cancelar</button>
+    </div>
+  </div>
+</form>
+

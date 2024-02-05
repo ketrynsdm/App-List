@@ -1,0 +1,31 @@
+<form class="container" [formGroup]="formContactoList">
+  <div class="text">
+    <h1>Adicionar</h1>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <label for="">Nome</label>
+      <mat-label>nome</mat-label>
+      <input matInput placeholder="nome" formControlName="nome" required />
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <label for="">Email</label>
+      <mat-label>email</mat-label>
+      <input matInput type="email" placeholder="email" formControlName="email" required />
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <label for="">Telefone</label>
+      <mat-label>telefone</mat-label>
+      <input matInput placeholder="telefone" formControlName="telefone" required />
+    </mat-form-field>
+  </div>
+  <div class=" row example-container button">
+    <button class="salvar" (click)="onSubmit()" [disabled]="!formContactoList.valid" type="submit"
+      >ADICIONAR</button>
+      <button mat-raised-button color="warn" routerLink="/lista" type="submit">CANCELAR</button>
+  </div>
+</form>
